@@ -16,7 +16,7 @@ public class VRPick : VRTK_InteractableObject
     void OnTriggerEnter(Collider c)
     {
         print(count++);
-        if (c.tag == "Ore")
+        if (c.tag == "Ore_Vein")
         {
             c.GetComponent<Ore_Controller>().hit(5);
         }
