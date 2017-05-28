@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ore_Collect : MonoBehaviour {
 
     private GameObject[] ores;
+    public TextMesh tm;
     private int ore_count = 0;
 
     void Start()
@@ -18,6 +19,7 @@ public class Ore_Collect : MonoBehaviour {
         {
             ores[ore_count++] = c.gameObject;
             c.gameObject.SetActive(false);
+            tm.text = "Items: " + ore_count + "/" + ores.Length;
         }
         else
         {
