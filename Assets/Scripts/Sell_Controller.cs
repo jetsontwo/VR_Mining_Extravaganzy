@@ -6,6 +6,7 @@ public class Sell_Controller : MonoBehaviour {
 
     public float money = 0;
     public TextMesh tm;
+    public Ore_Collect oc;
 
     void OnCollisionEnter(Collision c)
     {
@@ -13,7 +14,8 @@ public class Sell_Controller : MonoBehaviour {
         {
             print("yo");
             money += c.gameObject.GetComponent<Ore_Values>().value;
-            tm.text = "Money: " + money;
+            tm.text = "Money: $" + money;
+            oc.remove_item();
             Destroy(c.gameObject);
         }
         else

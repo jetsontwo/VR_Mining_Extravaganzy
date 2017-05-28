@@ -23,4 +23,9 @@ public class Ore_Collect : MonoBehaviour {
             c.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-1f, 1f), Random.Range(3.5f, 4f), Random.Range(-1.5f, -2f));
         }
     }
+
+    public void remove_item()
+    {
+        tm.text = "Items: " + --ore_count + "/" + 20;
+    }
 }
