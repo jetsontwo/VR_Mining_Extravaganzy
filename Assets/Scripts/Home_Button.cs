@@ -5,7 +5,7 @@ using VRTK;
 
 public class Home_Button : VRTK_DestinationMarker
 { 
-    public Transform destination;
+    public Transform destination, offset_loc;   
     private bool lastUsePressedState = false;
 
     private void OnTriggerStay(Collider collider)
