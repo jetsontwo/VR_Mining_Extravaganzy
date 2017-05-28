@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class Ore_Collect : MonoBehaviour {
 
-    private GameObject[] ores;
     public TextMesh tm;
     private int ore_count = 0;
+    public Transform ore_holder;
 
-    void Start()
-    {
-        ores = new GameObject[5];
-    }
 
     void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.tag == "Ore" && ore_count < ores.Length)
-        {
-            ores[ore_count++] = c.gameObject;
-            c.gameObject.SetActive(false);
-            tm.text = "Items: " + ore_count + "/" + ores.Length;
+        if (c.gameObject.tag == "Ore" && ore_count < 20)
+        { 
+            c.transform.parent = ore_holder;
+            c.gameObject.layer = 9;
+            ore_count++;
+            tm.text = "Items: " + ore_count + "/" + 20;
         }
         else
         {

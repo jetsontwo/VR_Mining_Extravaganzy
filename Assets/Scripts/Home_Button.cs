@@ -18,6 +18,7 @@ public class Home_Button : VRTK_DestinationMarker
                 var distance = Vector3.Distance(transform.position, destination.position);
                 var controllerIndex = VRTK_DeviceFinder.GetControllerIndex(controller.gameObject);
                 OnDestinationMarkerSet(SetDestinationMarkerEvent(distance, destination, new RaycastHit(), destination.position, controllerIndex));
+                transform.parent.parent.parent.SetPositionAndRotation(new Vector3(-50, 0, 0), Quaternion.identity);
             }
             lastUsePressedState = controller.usePressed;
         }

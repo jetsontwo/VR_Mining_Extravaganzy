@@ -11,6 +11,7 @@ public class Sell_Controller : MonoBehaviour {
     {
         if (c.gameObject.tag == "Ore")
         {
+            print("yo");
             money += c.gameObject.GetComponent<Ore_Values>().value;
             tm.text = "Money: " + money;
             Destroy(c.gameObject);
